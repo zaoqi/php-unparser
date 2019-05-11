@@ -44,7 +44,7 @@ describe('Declare', function () {
 
 describe('BinaryExpressions', function () {
   it('should use multiple lines if they are longer than 80 chars', function () {
-    expect(parseUnparse('<?php\n{echo "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" . "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" . "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;";}')).toBe([ '<?php', '', '{', '    echo "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" .', '        "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" .', '        "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;";', '}', '', '' ].join('\n'));
+    expect(parseUnparse('<?php\n{echo "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" . "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" . "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;";}')).toBe([ '<?php', '', '{', '    echo (("background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;" .', '        "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;") .', '        "background:#F9F7D8;color:#A79F00; border:1px solid #F0EEBD;");', '}', '', '' ].join('\n'));
   });
 });
 describe('inline', function () {

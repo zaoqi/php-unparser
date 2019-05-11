@@ -64,10 +64,10 @@ module.exports = function (node, indent) {
 
   firstpart = codegen(node.left, indent);
   secondpart = codegen(node.right, indent);
-  str = firstpart + this.ws + node.type + this.ws + secondpart;
+  str = '(' + firstpart + this.ws + node.type + this.ws + secondpart + ')';
 
   if (str.length > 80) {
-    str = firstpart + this.ws + node.type + this.nl + indent + this.indent + secondpart;
+    str = '(' + firstpart + this.ws + node.type + this.nl + indent + this.indent + secondpart + ')';
   }
 
   return str;
